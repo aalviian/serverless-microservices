@@ -9,8 +9,7 @@ interface MurzApiGatewayProps {
 }
 
 export class MurzApiGateway extends Construct {
-
-    constructor(scope: Construct, id: string, props: MurzApiGatewayProps){
+    constructor(scope: Construct, id: string, props: MurzApiGatewayProps) {
         super(scope, id);
 
         this.courseApiGateway(props.courseMicroservice)

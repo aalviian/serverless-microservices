@@ -15,13 +15,13 @@ export class MurzQueue extends Construct {
     constructor(scope: Construct, id: string, props: MurzQueueProps) {
         super(scope, id);
 
-      this.orderQueue = new Queue(this, 'EkamurzOrderQueue', {
-        queueName : 'EkamurzOrderQueue',
-        visibilityTimeout: Duration.seconds(30)
-      });
+        this.orderQueue = new Queue(this, 'EkamurzOrderQueue', {
+            queueName: 'EkamurzOrderQueue',
+            visibilityTimeout: Duration.seconds(30)
+        });
 
-      props.consumer.addEventSource(new SqsEventSource(this.orderQueue, {
-          batchSize: 1
-      }));
+        props.consumer.addEventSource(new SqsEventSource(this.orderQueue, {
+            batchSize: 1
+        }));
     }
 }

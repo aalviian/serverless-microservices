@@ -8,7 +8,7 @@ export class MurzDatabase extends Construct {
     public readonly cartTable: ITable;
     public readonly orderTable: ITable;
 
-    constructor(scope: Construct, id: string){
+    constructor(scope: Construct, id: string) {
         super(scope, id);
 
         this.courseTable = this.createCourseTable()
@@ -16,11 +16,11 @@ export class MurzDatabase extends Construct {
         this.orderTable = this.createOrderTable()
     }
 
-    private createCourseTable() : ITable {
+    private createCourseTable(): ITable {
         const courseTable = new Table(this, 'EkamurzCourseTable', {
             partitionKey: {
-              name: 'id',
-              type: AttributeType.STRING
+                name: 'id',
+                type: AttributeType.STRING
             },
             tableName: 'ekamurz_courses',
             removalPolicy: RemovalPolicy.DESTROY,
@@ -30,7 +30,7 @@ export class MurzDatabase extends Construct {
         return courseTable;
     }
 
-    private createCartTable() : ITable {
+    private createCartTable(): ITable {
         const cartTable = new Table(this, 'EkamurzCartTable', {
             partitionKey: {
                 name: 'username',
@@ -44,7 +44,7 @@ export class MurzDatabase extends Construct {
         return cartTable;
     }
 
-    private createOrderTable() : ITable {
+    private createOrderTable(): ITable {
         const orderTable = new Table(this, 'EkamurzOrderTable', {
             partitionKey: {
                 name: 'username',

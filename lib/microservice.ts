@@ -15,7 +15,7 @@ export class MurzMicroservices extends Construct {
     public readonly cartMicroservice: NodejsFunction;
     public readonly orderMicroservice: NodejsFunction;
 
-    constructor(scope: Construct, id: string, props: MurzMicroservicesProps){
+    constructor(scope: Construct, id: string, props: MurzMicroservicesProps) {
         super(scope, id);
 
         this.courseMicroservice = this.createCourseFunction(props.courseTable)
@@ -23,16 +23,16 @@ export class MurzMicroservices extends Construct {
         this.orderMicroservice = this.createOrderFunction(props.orderTable)
     }
 
-    private createCourseFunction(courseTable: ITable) : NodejsFunction {
+    private createCourseFunction(courseTable: ITable): NodejsFunction {
         const functionProps: NodejsFunctionProps = {
             bundling: {
-              externalModules: [
-                'aws-sdk'
-              ]
+                externalModules: [
+                    'aws-sdk'
+                ]
             },
             environment: {
-              PRIMARY_KEY: 'id',
-              DYNAMODB_TABLE_NAME: courseTable.tableName
+                PRIMARY_KEY: 'id',
+                DYNAMODB_TABLE_NAME: courseTable.tableName
             },
             runtime: Runtime.NODEJS_16_X
         }
@@ -47,19 +47,19 @@ export class MurzMicroservices extends Construct {
         return courseFunction
     }
 
-    private createCartFunction(cartTable: ITable) : NodejsFunction {
+    private createCartFunction(cartTable: ITable): NodejsFunction {
         const functionProps: NodejsFunctionProps = {
             bundling: {
-              externalModules: [
-                'aws-sdk'
-              ]
+                externalModules: [
+                    'aws-sdk'
+                ]
             },
             environment: {
-              PRIMARY_KEY: 'username',
-              DYNAMODB_TABLE_NAME: cartTable.tableName,
-              EVENT_SOURCE: "com.murz.cart.checkout",
-              EVENT_DETAILTYPE: "EkamurzCheckout",
-              EVENT_BUSNAME: "EkamurzCheckoutEventBus"
+                PRIMARY_KEY: 'username',
+                DYNAMODB_TABLE_NAME: cartTable.tableName,
+                EVENT_SOURCE: "com.murz.cart.checkout",
+                EVENT_DETAILTYPE: "EkamurzCheckout",
+                EVENT_BUSNAME: "EkamurzCheckoutEventBus"
             },
             runtime: Runtime.NODEJS_16_X
         }
@@ -74,28 +74,28 @@ export class MurzMicroservices extends Construct {
         return cartFunction;
     }
 
-    private createOrderFunction(orderTable: ITable) : NodejsFunction {
-      const functionProps: NodejsFunctionProps = {
-        bundling: {
-          externalModules: [
-            'aws-sdk'
-          ]
-        },
-        environment: {
-          PRIMARY_KEY: 'username',
-          SORT_KEY: 'orderDate',
-          DYNAMODB_TABLE_NAME: orderTable.tableName
-        },
-        runtime: Runtime.NODEJS_16_X
-      }
+    private createOrderFunction(orderTable: ITable): NodejsFunction {
+        const functionProps: NodejsFunctionProps = {
+            bundling: {
+                externalModules: [
+                    'aws-sdk'
+                ]
+            },
+            environment: {
+                PRIMARY_KEY: 'username',
+                SORT_KEY: 'orderDate',
+                DYNAMODB_TABLE_NAME: orderTable.tableName
+            },
+            runtime: Runtime.NODEJS_16_X
+        }
 
-      const orderFunction = new NodejsFunction(this, 'EkamurzOrderLambda', {
-        entry: join(__dirname, `/../src/order/index.js`),
-        ...functionProps,
-      });
+        const orderFunction = new NodejsFunction(this, 'EkamurzOrderLambda', {
+            entry: join(__dirname, `/../src/order/index.js`),
+            ...functionProps,
+        });
 
-      orderTable.grantReadWriteData(orderFunction);
+        orderTable.grantReadWriteData(orderFunction);
 
-      return orderFunction;
+        return orderFunction;
     }
 }
