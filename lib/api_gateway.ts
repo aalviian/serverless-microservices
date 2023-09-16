@@ -49,8 +49,8 @@ export class MurzApiGateway extends Construct {
         cartWithId.addMethod('GET');  // GET /cart/{username}
         cartWithId.addMethod('DELETE'); // DELETE /cart/{username}
 
-        const basketCheckout = cart.addResource('checkout');
-        basketCheckout.addMethod('POST'); // POST /cart/checkout
+        const cartCheckout = cart.addResource('checkout');
+        cartCheckout.addMethod('POST'); // POST /cart/checkout
     }
 
     private orderApiGateway(orderMicroservice: IFunction) {

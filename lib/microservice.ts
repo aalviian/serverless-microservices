@@ -57,7 +57,7 @@ export class MurzMicroservices extends Construct {
             environment: {
                 PRIMARY_KEY: 'username',
                 DYNAMODB_TABLE_NAME: cartTable.tableName,
-                EVENT_SOURCE: "com.murz.cart.checkout",
+                EVENT_SOURCE: "com.ekamurz.cart.checkout",
                 EVENT_DETAILTYPE: "EkamurzCheckout",
                 EVENT_BUSNAME: "EkamurzCheckoutEventBus"
             },

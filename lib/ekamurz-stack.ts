@@ -30,6 +30,7 @@ export class EkamurzStack extends cdk.Stack {
 
         const eventbus = new MurzEventBus(this, 'EventBus', {
             publisherFunction: microservices.cartMicroservice,
+            // subscriberFunction: microservices.orderMicroservice
             subscriberFunction: queue.orderQueue
         })
     }

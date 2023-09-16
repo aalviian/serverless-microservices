@@ -170,7 +170,7 @@ const publishCheckoutCartEvent = async (checkoutPayload) => {
         const params = {
             Entries: [
                 {
-                    Source: "com.murz.cart.checkout",
+                    Source: "com.ekamurz.cart.checkout",
                     Detail: JSON.stringify(checkoutPayload),
                     DetailType: "EkamurzCheckout",
                     Resources: [],
