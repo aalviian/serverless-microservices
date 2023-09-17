@@ -28,7 +28,7 @@ export class MurzApiGateway extends Construct {
         course.addMethod('GET'); // GET /course
         course.addMethod('POST');  // POST /course
 
-        const courseWithId = course.addResource('{id}'); // product/{id}
+        const courseWithId = course.addResource('{id}'); // course/{id}
         courseWithId.addMethod('GET'); // GET /course/{id}
         courseWithId.addMethod('PUT'); // PUT /course/{id}
         courseWithId.addMethod('DELETE'); // DELETE /course/{id}
