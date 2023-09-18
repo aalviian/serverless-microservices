@@ -19,9 +19,14 @@ cdk deploy
 
 5. You can **launch microservices** as below urls:
 
-* **Course API -> https://lq12f4w7hl.execute-api.us-east-2.amazonaws.com/prod/course**
-* **Cart API -> https://siuvw5kwc3.execute-api.us-east-2.amazonaws.com/prod/cart**
-* **Order API -> https://14pa4n2bbh.execute-api.us-east-2.amazonaws.com/prod/order**
+* **Product API -> https://xxx.execute-api.us-east-2.amazonaws.com/prod/product**
+* **Cart API -> https://xxx.execute-api.us-east-2.amazonaws.com/prod/cart**
+* **Order API -> https://xxx.execute-api.aus-east-2.amazonaws.com/prod/order**
+
+Existing API:
+* **Course API -> https://97vipdpgvc.execute-api.us-east-2.amazonaws.com/prod/course**
+* **Cart API -> https://h7ut0lwkb3.execute-api.us-east-2.amazonaws.com/prod/cart**
+* **Order API -> https://r8rnci9ow0.execute-api.us-east-2.amazonaws.com/prod/order**
 
 6. Signup & Login using Cognito Authentication
 ```csharp
