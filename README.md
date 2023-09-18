@@ -10,6 +10,7 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 1. Clone this repository
 2. At the root directory which include **cdk.json** files, run below command:
 ```csharp
+npm install
 cdk deploy
 ```
 >Note: Make sure Docker Desktop is running before execute the cdk deploy command.
@@ -18,9 +19,9 @@ cdk deploy
 
 5. You can **launch microservices** as below urls:
 
-* **Course API -> https://xxx.execute-api.us-east-2.amazonaws.com/prod/course**
-* **Cart API -> https://xxx.execute-api.us-east-2.amazonaws.com/prod/cart**
-* **Order API -> https://xxx.execute-api.aus-east-2.amazonaws.com/prod/order**
+* **Course API -> https://lq12f4w7hl.execute-api.us-east-2.amazonaws.com/prod/course**
+* **Cart API -> https://siuvw5kwc3.execute-api.us-east-2.amazonaws.com/prod/cart**
+* **Order API -> https://14pa4n2bbh.execute-api.us-east-2.amazonaws.com/prod/order**
 
 6. Signup & Login using Cognito Authentication
 ```csharp
