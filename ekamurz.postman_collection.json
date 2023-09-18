@@ -1,0 +1,373 @@
+{
+	"info": {
+		"_postman_id": "f4dd8c70-3580-47fe-acf4-01f93dc5074d",
+		"name": "ekamurz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26215078"
+	},
+	"item": [
+		{
+			"name": "course microservice",
+			"item": [
+				{
+					"name": "course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{course_base_url}}/course",
+							"host": [
+								"{{course_base_url}}"
+							],
+							"path": [
+								"course"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "course",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Coding Style\",\r\n    \"description\": \"Build your coding style\",\r\n    \"imageFile\": \"product-2.png\",\r\n    \"category\": \"Programming\",\r\n    \"price\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{course_base_url}}/course",
+							"host": [
+								"{{course_base_url}}"
+							],
+							"path": [
+								"course"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "course2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Marketing Tips\",\r\n    \"description\": \"Marketing Tips\",\r\n    \"imageFile\": \"product-2.png\",\r\n    \"category\": \"Marketing\",\r\n    \"price\": 200\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{course_base_url}}/course",
+							"host": [
+								"{{course_base_url}}"
+							],
+							"path": [
+								"course"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "courseById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{course_base_url}}/course/14dfcd95-db6c-4ba3-aa1c-f9fbd3bed487",
+							"host": [
+								"{{course_base_url}}"
+							],
+							"path": [
+								"course",
+								"14dfcd95-db6c-4ba3-aa1c-f9fbd3bed487"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "course",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Marketing Tips & Trick\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{course_base_url}}/course/334cbe23-876d-45e4-96d4-6cdf19dd2436",
+							"host": [
+								"{{course_base_url}}"
+							],
+							"path": [
+								"course",
+								"334cbe23-876d-45e4-96d4-6cdf19dd2436"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "course",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{course_base_url}}/course/334cbe23-876d-45e4-96d4-6cdf19dd2436",
+							"host": [
+								"{{course_base_url}}"
+							],
+							"path": [
+								"course",
+								"334cbe23-876d-45e4-96d4-6cdf19dd2436"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cart microservice",
+			"item": [
+				{
+					"name": "cart",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{cart_base_url}}/cart",
+							"host": [
+								"{{cart_base_url}}"
+							],
+							"path": [
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"alvian\",\r\n  \"items\": [\r\n    {\r\n        \"courseId\": \"fcd6de02-7286-46c1-9751-58cb63ad32c0\",\r\n        \"courseName\": \"Build Your Branding\",\r\n        \"price\": 100,\r\n        \"quantity\": 2\r\n\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cart_base_url}}/cart",
+							"host": [
+								"{{cart_base_url}}"
+							],
+							"path": [
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cartByUserName",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{cart_base_url}}/cart/alvian",
+							"host": [
+								"{{cart_base_url}}"
+							],
+							"path": [
+								"cart",
+								"alvian"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cart",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{cart_base_url}}/cart/alvian",
+							"host": [
+								"{{cart_base_url}}"
+							],
+							"path": [
+								"cart",
+								"alvian"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cart checkout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"alvian\",\r\n  \"total_price\": 0,\r\n  \"first_name\": \"Alvian\",\r\n  \"last_name\": \"Supriadi\",\r\n  \"email\": \"aalviian@gmail.com\",\r\n  \"address\": \"Tangerang\",\r\n  \"cardInfo\": \"12345678910\",\r\n  \"payment_methos\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cart_base_url}}/cart/checkout",
+							"host": [
+								"{{cart_base_url}}"
+							],
+							"path": [
+								"cart",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order microservice",
+			"item": [
+				{
+					"name": "order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{order_base_url}}/order?Authorization={{token}}",
+							"host": [
+								"{{order_base_url}}"
+							],
+							"path": [
+								"order"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orderByUserName",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{order_base_url}}/order/swn?orderDate=2022-03-31T12:52:23.228Z",
+							"host": [
+								"{{order_base_url}}"
+							],
+							"path": [
+								"order",
+								"swn"
+							],
+							"query": [
+								{
+									"key": "orderDate",
+									"value": "2022-03-31T12:52:23.228Z"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
