@@ -22,6 +22,14 @@ cdk deploy
 * **Cart API -> https://xxx.execute-api.us-east-2.amazonaws.com/prod/cart**
 * **Order API -> https://xxx.execute-api.aus-east-2.amazonaws.com/prod/order**
 
+6. Signup & Login using Cognito Authentication
+```csharp
+https://ekamurz.auth.us-east-2.amazoncognito.com/login?client_id=3euuidrcvrkboct8b7ofqe7ss6&response_type=token&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fekamurz-app%2Fcallback
+```
+
+7. After successfully redirect, get access token and put it to header when calling the APIs.
+`Authorization: <token>`
+
 ## Useful commands
 
 * `npm run build`   compile typescript to js
