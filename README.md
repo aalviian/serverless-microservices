@@ -2,7 +2,7 @@
 
 This is a Ekamurz with Serverless Microservices.
 
-![Architecture](https://raw.githubusercontent.com/aalviian/ekamurz/develop/Serverless%20Microservice.png?token=GHSAT0AAAAAACHVTCDD4QH7CKFAB2N6UFWUZIJB4FA)
+![Architecture](https://github.com/aalviian/serverless-microservices/blob/main/Serverless%20Microservice.png)
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
