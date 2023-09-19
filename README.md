@@ -2,7 +2,7 @@
 
 This is a Ekamurz with Serverless Microservices.
 
-![Architecture](https://raw.githubusercontent.com/aalviian/ekamurz/develop/Serverless%20Microservice.png)
+![Architecture](https://raw.githubusercontent.com/aalviian/ekamurz/develop/Serverless%20Microservice.png?token=GHSAT0AAAAAACHVTCDD4QH7CKFAB2N6UFWUZIJB4FA)
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
@@ -28,7 +28,7 @@ Existing API:
 * **Cart API -> https://h7ut0lwkb3.execute-api.us-east-2.amazonaws.com/prod/cart**
 * **Order API -> https://r8rnci9ow0.execute-api.us-east-2.amazonaws.com/prod/order**
 
-6. Signup & Login using Cognito Authentication
+6. Signup & Login using Cognito Authentication Client UI
 ```csharp
 https://ekamurz.auth.us-east-2.amazoncognito.com/login?client_id=3euuidrcvrkboct8b7ofqe7ss6&response_type=token&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fekamurz-app%2Fcallback
 ```
